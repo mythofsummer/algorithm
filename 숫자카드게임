@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int m, n;
+int result;
+
+int main()
+{
+	cin >> m >> n;
+
+	for (int i = 0; i < m; i++)
+	{
+		int min_value = 10001;
+		for (int j = 0; j < n; j++)
+		{
+			int x;
+			cin >> x;
+			min_value = min(min_value, x);
+		}
+		result = max(result, min_value);
+	}
+	cout << result;
+}
