@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int n;
+vector<int> v;
+
+
+int main()
+{
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		int x;
+		cin >> x;
+		v.push_back(x);
+	}
+	sort(v.begin(), v.end());
+	
+	int result = 0;
+	int cnt = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		cnt += 1;
+		if (cnt >= v[i])
+		{
+			result += 1;
+			cnt = 0;
+		}
+	}
+	cout << result;
+}
